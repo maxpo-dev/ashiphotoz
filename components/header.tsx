@@ -1,31 +1,36 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Camera, Menu } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu } from "lucide-react";
+import Image from "next/image";
 
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
-//   { name: "Contact", href: "/contact" },
-]
+];
 
 export default function Header() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex items-center justify-between h-16 px-4 mx-auto">
+    <header className="sticky top-0 z-50 w-full border-b bg-amber-900 backdrop-blur-lg text-white">
+      <div className="container flex items-center justify-between h-16 px-4 mx-auto md:px-6">
         <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-          <Camera className="w-6 h-6" />
-          <span>Ashi Photoz</span>
+          <Image 
+            src="/logo/logo b.png" 
+            alt="Ashi Photoz Logo" 
+            width={130} 
+            height={130} 
+            className="md:w-40 md:h-15"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -43,7 +48,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:block rounded-sm bg-amber-700">
           <Button asChild>
             <Link href="/contact">Book Now</Link>
           </Button>
@@ -51,27 +56,33 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="w-5 h-5" />
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="w-6 h-6" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <nav className="flex flex-col gap-4 mt-8">
+          <SheetContent className="w-[85%] max-w-[380px] sm:w-[400px] bg-white dark:bg-gray-900">
+            <div className="sr-only">
+              <h2>Navigation Menu</h2>
+            </div>
+
+            <nav className="flex flex-col gap-4 mt-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg font-medium transition-colors hover:text-primary ${
-                    pathname === item.href ? "text-primary" : "text-muted-foreground"
+                  className={`block text-lg font-medium text-center p-3 rounded-md transition-colors ${
+                    pathname === item.href 
+                      ? "bg-primary text-white shadow-md" 
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="mt-4">
+              <Button asChild className="mt-4 w-full text-lg py-3 bg-amber-700">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
                   Book Now
                 </Link>
@@ -81,6 +92,5 @@ export default function Header() {
         </Sheet>
       </div>
     </header>
-  )
+  );
 }
-

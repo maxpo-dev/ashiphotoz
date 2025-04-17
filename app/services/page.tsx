@@ -1,15 +1,15 @@
 import Image from "next/image"
-import Link from "next/link"
+// import Link from "next/link"
 import { Camera, Check, Heart, Users } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+// import { Button } from "@/components/ui/button"
+// import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function ServicesPage() {
   return (
     <div className="container px-4 py-16 mx-auto">
       <div className="max-w-3xl mx-auto mb-16 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Our Services</h1>
-        <p className="mt-4 text-xl text-muted-foreground">Professional photography services tailored to your needs</p>
+        <p className="mt-4 text-xl text-muted-foreground">Professional photography and videography services customized  to your needs</p>
       </div>
 
       {/* Main Services */}
@@ -38,9 +38,9 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <Button asChild size="lg">
+              {/* <Button asChild size="lg">
                 <Link href="/contact">Book This Service</Link>
-              </Button>
+              </Button> */}
             </div>
             <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
               <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
@@ -50,7 +50,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Pricing */}
-      <div className="py-16">
+      {/* <div className="py-16">
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Pricing Plans</h2>
           <p className="mt-4 text-lg text-muted-foreground">Choose the perfect package for your photography needs</p>
@@ -90,7 +90,7 @@ export default function ServicesPage() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
@@ -101,93 +101,96 @@ const services = [
     description:
       "Capture the magic and emotion of your special day with our professional wedding photography services.",
     icon: Heart,
-    image: "/images/wedding.jpg",
+    image: "/services/33.jpg",
     features: [
       "Pre-wedding consultation and planning",
       "Coverage of ceremony and reception",
       "Professional editing and color correction",
       "Online gallery for sharing with family and friends",
-      "High-resolution digital files",
-      "Optional album design and printing services",
+      "Creative and high-clarity photo captures",
+      "Album design and printing services",
+      "Fast delivery of preview images",
     ],
   },
   {
-    title: "Portrait Sessions",
+    title: "Candid Photography",
     description:
-      "Professional portrait photography for individuals, families, and corporate needs that capture personality and emotion.",
+      "We capture genuine, unscripted moments, Real emotions, expressions, and the beauty of life as it unfolds naturally, without a pose  and unplanned artistic clicks.",
     icon: Users,
-    image: "/images/wedding.jpg",
+    image: "/services/41.jpg",
     features: [
-      "Indoor or outdoor location options",
-      "Multiple outfit changes",
+      // "Indoor or outdoor location options",
+      // "Multiple outfit changes",
+      "Natural light and ambient-focused setups",
       "Professional lighting and equipment",
       "Guidance on posing and expressions",
-      "Edited high-resolution images",
+      "Artistic composition and storytelling approach",
+      "Professionally edited high-resolution images",
       "Quick turnaround time",
     ],
   },
   {
     title: "Event Coverage",
     description:
-      "Comprehensive photography coverage for all types of events and celebrations, from corporate gatherings to special occasions.",
+      "We beautifully capture every special moment of your event — big or small — with an eye for detail, creativity, and your unique vision. From elegant décor to heartfelt celebrations, we ensure every memory is preserved with perfection.",
     icon: Camera,
-    image: "/images/wedding.jpg",
+    image: "/services/WhatsApp Image 2025-04-13 at 3.53.45 PM.jpeg",
     features: [
-      "Full event documentation",
-      "Candid and posed photography",
-      "Multiple photographer options for large events",
-      "Fast delivery of preview images",
-      "Complete editing of all final images",
+      "Full event planning and execution",
+      "Birthday decorations coverage",
+      "Naming ceremony",
+      "Engagement celebrations",
+      "Reception and wedding decorations",
       "Custom packages based on event duration",
     ],
-  },
+  },  
 ]
 
-const pricingPlans = [
-  {
-    title: "Basic",
-    description: "Perfect for simple sessions",
-    price: 199,
-    featured: false,
-    features: [
-      "1-hour photo session",
-      "One location",
-      "10 edited digital images",
-      "Online gallery",
-      "Digital download",
-      "Print release",
-    ],
-  },
-  {
-    title: "Premium",
-    description: "Our most popular package",
-    price: 399,
-    featured: true,
-    features: [
-      "2-hour photo session",
-      "Two locations",
-      "25 edited digital images",
-      "Online gallery",
-      "Digital download",
-      "Print release",
-      "One 8x10 print",
-    ],
-  },
-  {
-    title: "Deluxe",
-    description: "Complete photography experience",
-    price: 699,
-    featured: false,
-    features: [
-      "4-hour photo session",
-      "Multiple locations",
-      "50 edited digital images",
-      "Online gallery",
-      "Digital download",
-      "Print release",
-      "Photo album",
-      "Two 8x10 prints",
-    ],
-  },
-]
+// const pricingPlans = [
+//   {
+//     title: "Basic",
+//     description: "Perfect for simple sessions",
+//     price: 199,
+//     featured: false,
+//     features: [
+//       "1-hour photo session",
+//       "One location",
+//       "10 edited digital images",
+//       "Online gallery",
+//       "Digital download",
+//       "Print release",
+//     ],
+//   },
+//   {
+//     title: "Premium",
+//     description: "Our most popular package",
+//     price: 399,
+//     featured: true,
+//     features: [
+//       "2-hour photo session",
+//       "Two locations",
+//       "25 edited digital images",
+//       "Online gallery",
+//       "Digital download",
+//       "Print release",
+//       "One 8x10 print",
+//     ],
+//   },
+//   {
+//     title: "Deluxe",
+//     description: "Complete photography experience",
+//     price: 699,
+//     featured: false,
+//     features: [
+//       "4-hour photo session",
+//       "Multiple locations",
+//       "50 edited digital images",
+//       "Online gallery",
+//       "Digital download",
+//       "Print release",
+//       "Photo album",
+//       "Two 8x10 prints",
+//     ],
+//   },
+// ]
 

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Camera, Heart, Instagram, Mail, Users } from "lucide-react"
+import { Camera, Heart, Instagram, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       {/* Our Story */}
       <section className="grid gap-12 mb-20 md:grid-cols-2 md:items-center">
         <div className="relative overflow-hidden rounded-lg aspect-square">
-          <Image src="/images/Corporate-Portraits.jpg" alt="Studio founder" fill className="object-cover" />
+          <Image src="/team/WhatsApp Image 2025-04-13 at 5.03.15 PM.jpeg" alt="Studio founder" fill className="object-cover" />
         </div>
         <div>
           <h2 className="mb-6 text-3xl font-bold">Our Story</h2>
@@ -132,39 +132,40 @@ const values = [
 
 const team = [
   {
-    name: "Ashi Kumar",
+    name: "Ashi",
     role: "Founder & Lead Photographer",
-    image: "/placeholder.svg?height=600&width=400",
+    image: "/team/IMG_20250413_164102.jpg",
     social: [
-      { name: "Instagram", icon: Instagram, url: "#" },
-      { name: "Email", icon: Mail, url: "#" },
+      { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/ashi.photoz?igsh=dXB2YnJydGdwdDNw" },
+      // { name: "Email", icon: Mail, url: "#" },
     ],
   },
   {
-    name: "Maya Rodriguez",
-    role: "Wedding Specialist",
-    image: "/placeholder.svg?height=600&width=400",
+    name: "Abhishek",
+    role: "cinematographer & Editor",
+    image: "/team/1744543556195.jpg",
     social: [
-      { name: "Instagram", icon: Instagram, url: "#" },
-      { name: "Email", icon: Mail, url: "#" },
+      { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/ap_capture03?igsh=MWhzbDd1dm1wcnlsdA==" },
+      // { name: "Email", icon: Mail, url: "#" },
     ],
   },
   {
-    name: "James Wilson",
-    role: "Portrait Photographer",
-    image: "/placeholder.svg?height=600&width=400",
+    name: "Rakesh",
+    role: "Photographer",
+    image: "/team/IMG_20250413_164412.jpg",
     social: [
-      { name: "Instagram", icon: Instagram, url: "#" },
-      { name: "Email", icon: Mail, url: "#" },
+      { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/rakesh_devi_03?igsh=MWFudzY3OGVzc3BhNw==" },
+      // { name: "Email", icon: Mail, url: "#" },
     ],
   },
   {
-    name: "Sarah Chen",
-    role: "Event Photographer",
-    image: "/placeholder.svg?height=600&width=400",
+    name: "Rajesh",
+    role: "Photographer & Editer",
+    image: "/team/IMG_20250413_164741.jpg",
     social: [
-      { name: "Instagram", icon: Instagram, url: "#" },
-      { name: "Email", icon: Mail, url: "#" },
+      { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/dimpu_official_007?igsh=MXMyNnFxdGFycDF6ZA==" },
+      // { name: "Email", icon: Mail, url: "#" },
     ],
   },
 ]
+

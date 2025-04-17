@@ -1,10 +1,10 @@
 "use client"
-
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 import type React from "react"
-
+import { MdLocationOn } from "react-icons/md";
 import { useState } from "react"
 import Link from "next/link"
-import { Calendar, Clock, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react"
+import { Calendar, Clock,Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -117,13 +117,16 @@ export default function ContactPage() {
                   <SelectTrigger id="service">
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="wedding">Wedding Photography</SelectItem>
-                    <SelectItem value="portrait">Portrait Session</SelectItem>
-                    <SelectItem value="event">Event Coverage</SelectItem>
-                    <SelectItem value="commercial">Commercial Photography</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
+                  <SelectContent className="bg-amber-50 text-amber-900 border border-amber-200 shadow-md rounded-md">
+  <SelectItem value="Pre-wedding">Pre-Wedding Photography</SelectItem>
+  <SelectItem value="wedding">Wedding Photography</SelectItem>
+  <SelectItem value="portrait">Candid Photography</SelectItem>
+  <SelectItem value="commercial">House Warming</SelectItem>
+  <SelectItem value="Naming-Ceremony">Naming Ceremony</SelectItem>
+  <SelectItem value="event">Event Coverage</SelectItem>
+  <SelectItem value="other">Other</SelectItem>
+</SelectContent>
+
                 </Select>
               </div>
 
@@ -178,61 +181,58 @@ export default function ContactPage() {
                 <MapPin className="w-5 h-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold">Studio Address</h3>
-                  <p className="text-muted-foreground">123 Photography Lane, Creative City, 12345</p>
+                  <p className="text-muted-foreground">Shivakote, main road, opposite Oxygen gym, Hesaraghatta, Bengaluru, Karnataka 560089</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="w-5 h-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-muted-foreground">(123) 456-7890</p>
+                  <p className="text-muted-foreground">+91 99642 84475</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="w-5 h-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-muted-foreground">info@ashiphotoz.com</p>
+                  <p className="text-muted-foreground">Ashi.photoz1@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Clock className="w-5 h-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold">Business Hours</h3>
-                  <p className="text-muted-foreground">Monday - Friday: 9am - 6pm</p>
-                  <p className="text-muted-foreground">Saturday: 10am - 4pm</p>
-                  <p className="text-muted-foreground">Sunday: Closed</p>
+                  <p className="text-muted-foreground">Monday - Saturday: 9am - 9pm</p>
+                  {/* <p className="text-muted-foreground">: </p> */}
+                  <p className="text-muted-foreground">Sunday: 10am - 6pm</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div>
-            <h2 className="mb-4 text-2xl font-bold">Follow Us</h2>
-            <div className="flex gap-4">
-              <Link
-                href="#"
-                className="flex items-center justify-center w-10 h-10 transition-colors rounded-full bg-muted hover:bg-primary hover:text-white"
-              >
-                <Facebook className="w-5 h-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center justify-center w-10 h-10 transition-colors rounded-full bg-muted hover:bg-primary hover:text-white"
-              >
-                <Instagram className="w-5 h-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center justify-center w-10 h-10 transition-colors rounded-full bg-muted hover:bg-primary hover:text-white"
-              >
-                <Twitter className="w-5 h-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-            </div>
-          </div>
+          <div className="flex justify-center gap-6 mb-6">
+      <Link
+        href="https://maps.app.goo.gl/KCCr9aGL4U6jUVRbA?g_st=ac"
+        target="_blank"
+        className="text-amber-700 hover:text-gray-300 transition text-3xl"
+      >
+        <MdLocationOn />
+      </Link>
+      <Link
+        href="https://www.instagram.com/ashi.photoz?igsh=bDh5cWVuMXJxbnlx"
+        target="_blank"
+        className="text-amber-700 hover:text-gray-300 transition text-3xl"
+      >
+        <FaInstagram />
+      </Link>
+      <Link
+        href="https://www.youtube.com/@ashi.photoz"
+        target="_blank"
+        className="text-amber-800 hover:text-gray-300 transition text-3xl"
+      >
+        <FaYoutube />
+      </Link>
+    </div>
 
           <div className="p-6 mt-auto border rounded-lg bg-muted/50">
             <h3 className="flex items-center gap-2 mb-4 text-lg font-semibold">
